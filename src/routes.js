@@ -11,7 +11,7 @@ import {
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
-import AnalizeRecord from "views/admin/analize-record";
+import UploadSingle from "./views/admin/uploadSingle";
 import Results from "views/admin/results";
 import DataTables from "views/admin/dataTables";
 
@@ -27,9 +27,9 @@ const routes = [
     component: MainDashboard,
   },
   {
-    name: "Analizar Grabación",
+    name: "Subir Audio",
     layout: "/admin",
-    path: "/analize-record",
+    path: "/UploadSingle",
     icon: (
       <Icon
         as={MdOutlineShoppingCart}
@@ -38,11 +38,11 @@ const routes = [
         color='inherit'
       />
     ),
-    component: AnalizeRecord,
+    component: UploadSingle,
     secondary: true,
   },
   {
-    name: "Analizar por Lote",
+    name: "Subir Audios por Lotes",
     layout: "/admin",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     path: "/data-tables",

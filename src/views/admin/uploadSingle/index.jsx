@@ -25,7 +25,6 @@ import React from "react";
 // Chakra imports
 import { Box, Grid } from "@chakra-ui/react";
 import Upload from "./components/Upload";
-import ComplexTable from "./components/ComplexTable";
 
 export default function AnalizeRecord() {
   return (
