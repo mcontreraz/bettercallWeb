@@ -24,12 +24,11 @@
 import { Box, Grid } from "@chakra-ui/react";
 
 // Custom components
+
+
 import {
   columnsDataComplex,
 } from "views/admin/dataTables/variables/columnsData";
-import ComplexTable from "views/admin/dataTables/components/ComplexTable";
-import tableDataComplex from "views/admin/dataTables/variables/tableDataComplex.json";
-
 
 import React from "react";
 
@@ -48,10 +47,7 @@ export default function Results() {
         }}
         gap={{ base: "20px", xl: "20px" }}
       >
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
+        Table
       </Grid>
     </Box>
   );

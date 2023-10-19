@@ -30,6 +30,7 @@ export default function ColumnsTable(props) {
 
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
+  console.log("🚀 ~ file: ComplexTable.js:33 ~ ColumnsTable ~ data:", data)
 
   const tableInstance = useTable(
     {
@@ -98,7 +99,7 @@ export default function ColumnsTable(props) {
               <Tr {...row.getRowProps()} key={index}>
                 {row.cells.map((cell, index) => {
                   let data = "";
-                  if (cell.column.Header === "NAME") {
+                  if (cell.column.Header === "AUDIO") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}

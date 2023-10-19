@@ -40,12 +40,13 @@ export default function transcribeReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        error: null,
+        error: false,
       };
     case TRANSCRIBE_FAILURE:
         return {
             ...state,
             loading: false,
+            error: true,
             errorCode: action.payload.errorCode,
             errorMessage: action.payload.errorMessage
         }; 
