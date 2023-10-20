@@ -19,21 +19,44 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchJobsData } from "ducks/getJobs";
 
 // Chakra imports
 import { Box, Grid } from "@chakra-ui/react";
 
 // Custom components
-import {
-  columnsDataComplex,
-} from "views/admin/dataTables/variables/columnsData";
-import ComplexTable from "views/admin/dataTables/components/ComplexTable";
-import tableDataComplex from "views/admin/dataTables/variables/tableDataComplex.json";
 
-
-import React from "react";
+import { columnsDataComplex } from "views/admin/dataTables/variables/columnsData";
+import JobsDataTable from "./components/JobsDataTable";
 
 export default function Results() {
+
+  const dispatch = useDispatch();
+
+  // TODO hacer dispatch a check all jobs agregar boton actualizar, funcionalidades de botones
+
+  useEffect(() => {
+    dispatch(fetchJobsData());
+  }
+  , []);
+
+  const { data } = useSelector((state) => state.getJobsData);
+
+  const handleView = (item) => {
+    // Lógica para ver el ítem
+  };
+  
+  const handleDownload = (item) => {
+    // Lógica para descargar el ítem en CSV
+  };
+  
+  const handleDelete = (item) => {
+    // Lógica para borrar el ítem
+  };
+  
+
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       {/* Main Fields */}
@@ -48,9 +71,11 @@ export default function Results() {
         }}
         gap={{ base: "20px", xl: "20px" }}
       >
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
+        <JobsDataTable 
+        data={data}
+        handleDelete={handleDelete}
+        handleDownload={handleDownload}
+        handleView={handleView}
         />
       </Grid>
     </Box>

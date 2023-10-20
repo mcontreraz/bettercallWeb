@@ -57,8 +57,8 @@ export const columnsDataColumns = [
 
 export const columnsDataComplex = [
   {
-    Header: "NAME",
-    accessor: "name",
+    Header: "AUDIO",
+    accessor: "audio",
   },
   {
     Header: "STATUS",
@@ -71,5 +71,24 @@ export const columnsDataComplex = [
   {
     Header: "PROGRESS",
     accessor: "progress",
+  },
+];
+
+export const columnsDataAudios = [
+  {
+    Header: "Audio",
+    accessor: "name",
+  },
+  {
+    Header: "Status",
+    accessor: "status",
+  },
+  {
+    Header: "Fecha",
+    accessor: "date",
+  },
+  {
+    Header: "Acciones",
+    accessor: "actions",
   },
 ];
