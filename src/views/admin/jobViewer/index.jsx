@@ -17,13 +17,12 @@ export default function JobViewer() {
       // Envía el nombre del archivo al dispatch para solicitar la transcripción
       dispatch(fetchTranscriptData(filename));
     }
-  }, [filename]);
+  }, [dispatch, filename]);
 
   const transcriptData = useSelector(
     (state) => state.getTranscriptedAudio?.data
   );
   const isLoading = useSelector((state) => state.getTranscriptedAudio?.loading);
-  console.log("🚀 ~ file: index.jsx:24 ~ JobViewer ~ isLoading:", isLoading);
 
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>

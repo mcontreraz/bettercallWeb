@@ -14,7 +14,7 @@ import {
   MdVisibility,
   MdFileDownload,
   MdDelete,
-  MdSync,
+  MdChangeCircle,
   MdOutlineError,
   MdCheckCircle,
 } from "react-icons/md";
@@ -30,7 +30,18 @@ const JobsDataTable = (props) => {
   const getJobStatusText = (status) => {
     switch (status) {
       case "STARTED":
-        return;
+        return (  
+          <Flex align="center">
+          <Icon
+            w="24px"
+            h="24px"
+            me="5px"
+            color="yellow.500"
+            as={MdChangeCircle}
+          />
+          En Progreso
+        </Flex>
+        )
       case "FINISHED":
         return (
           <Flex align="center">

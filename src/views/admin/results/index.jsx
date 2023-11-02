@@ -11,16 +11,13 @@ export default function Results() {
 
   useEffect(() => {
     dispatch(fetchJobsData());
-  }, []);
+  }, [dispatch]);
 
   const { data } = useSelector((state) => state.getJobsData);
   const isLoading = useSelector((state) => state.getJobsData.loading);
 
   const handleView = (item) => {
-    // Calcula el hash MD5 del filename
     const file = item.replace(".mp3", "");
-
-    // Redirige a la URL con el hash MD5 como parte de la ruta
     history.push(`/admin/jobViewer?job=${file}`);
 
   };
