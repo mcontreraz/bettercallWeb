@@ -13,6 +13,7 @@ import {
 import MainDashboard from "views/admin/default";
 import UploadSingle from "./views/admin/uploadSingle";
 import Results from "views/admin/results";
+import JobViewer from "views/admin/jobViewer";
 import DataTables from "views/admin/dataTables";
 
 // Auth Imports
@@ -54,6 +55,12 @@ const routes = [
     path: "/results",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Results,
+  },
+  {
+    layout: "/admin",
+    path: "/jobViewer",
+    component: JobViewer,
+    hidden: true,
   },
 ];
 

@@ -5,12 +5,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import uploadFileReducer from '../ducks/uploadFiles';
 import transcribeAudioReducer from '../ducks/transcribeAudio';
 import fetchJobsDataReducer from '../ducks/getJobs';
+import fetchTranscriptDataReducer from '../ducks/getTranscript';
 
 // Combina todos tus reductores
 const rootReducer = combineReducers({
   uploadFile: uploadFileReducer,
   transcribeAudio: transcribeAudioReducer,
-  getJobsData: fetchJobsDataReducer
+  getJobsData: fetchJobsDataReducer, 
+  getTranscriptedAudio: fetchTranscriptDataReducer
   // ... otros reductores
 });
 
