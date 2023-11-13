@@ -96,12 +96,8 @@ export default function Dashboard(props) {
     return activeNavbar;
   };
   const getRoutes = (routes) => {
+    console.log("🚀 ~ file: index.js:99 ~ getRoutes ~ routes:", routes)
     return routes.map((prop, key) => {
-      console.log("🚀 ~ file: index.js:100 ~ returnroutes.map ~ prop:", prop)
-      // Si tiene la propiedad hidden como true, no generamos una ruta para él
-      if (prop.hidden) {
-        return null;
-      }
       if (prop.layout === "/admin") {
         return (
           <Route
@@ -115,7 +111,6 @@ export default function Dashboard(props) {
       if (prop.collapse) {
         return getRoutes(prop.items);
       }
-
       if (prop.category) {
         return getRoutes(prop.items);
       } else {

@@ -55,11 +55,11 @@ const routes = [
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Results,
   },
-  {
+  { name : "Análisis de Transcripción",
     layout: "/admin",
     path: "/jobViewer",
     component: JobViewer,
-    hidden: true,
+    hidden: false,
   },
 ];
 
