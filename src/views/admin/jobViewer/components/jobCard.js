@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Text, Spinner, Flex } from "@chakra-ui/react";
 
 function JobCard({ data, isLoading }) {
-  console.log("🚀 ~ file: jobCard.js:5 ~ JobCard ~ isLoading:", isLoading);
   return (
     <>
       <Box

@@ -2,9 +2,11 @@
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin';
 
 export default function AdminNavbar(props) {
+	const jobName = useSelector((state) => state.getTranscriptedAudio?.job_name);
 	const [ scrolled, setScrolled ] = useState(false);
 
 	useEffect(() => {
@@ -97,7 +99,7 @@ export default function AdminNavbar(props) {
 
 						<BreadcrumbItem color={secondaryText} fontSize='sm'>
 							<BreadcrumbLink href='#' color={secondaryText}>
-								{brandText}
+								{ brandText === 'jobName' ? 'Resultado Análisis' : brandText }
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 					</Breadcrumb>
@@ -118,7 +120,8 @@ export default function AdminNavbar(props) {
 						_focus={{
 							boxShadow: 'none'
 						}}>
-						{brandText}
+						
+						{brandText === 'jobName' ? jobName : brandText }
 					</Link>
 				</Box>
 				<Box ms='auto' w={{ sm: '100%', md: 'unset' }}>

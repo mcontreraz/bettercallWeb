@@ -47,6 +47,8 @@ export default function Upload(props) {
   const brandColor = useColorModeValue("brand.500", "white");
   const textColorSecondary = "gray.400";
 
+
+  // ESTO NO VA ACA
   const handleTranscribeAudio = async () => {
     try {
       dispatch(transcribeRequest());

@@ -19,7 +19,6 @@ export default function Results() {
   const handleView = (item) => {
     const file = item.replace(".mp3", "");
     history.push(`/admin/jobViewer?job=${file}`);
-
   };
 
   const handleDownload = (item) => {
@@ -43,7 +42,6 @@ export default function Results() {
         }}
         gap={{ base: "20px", xl: "20px" }}
       >
-        +
         <JobsDataTable
           data={data}
           handleDelete={handleDelete}

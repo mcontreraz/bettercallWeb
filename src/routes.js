@@ -16,7 +16,10 @@ import JobViewer from "views/admin/jobViewer";
 import DataTables from "views/admin/dataTables";
 
 // Auth Imports
-import SignInCentered from "views/auth/signIn";
+// import SignInCentered from "views/auth/signIn";
+
+// ==============================|| ROUTING RENDER ||============================== //
+
 
 const routes = [
   {
@@ -55,7 +58,7 @@ const routes = [
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Results,
   },
-  { name : "Análisis de Transcripción",
+  { name : 'jobName',
     layout: "/admin",
     path: "/jobViewer",
     component: JobViewer,
